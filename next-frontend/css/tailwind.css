@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+
+  html,
+  body {
+    @apply dark:bg-dark;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+html{
+  zoom: normal;
+ /* scroll-behavior: smooth; */
+}
+
+  .section {
+    @apply py-12 lg:py-32;
+  }
+
+  .section-title {
+    @apply text-3xl lg:text-4xl font-medium lg:font-extrabold mb-5;
+  }
+
+  .subtitle {
+    @apply text-base text-paragraph mb-16 lg:mb-24 max-w-[520px];
+  }
+
+  .btn {
+    @apply py-4 px-7 font-medium text-white flex items-center justify-center rounded-lg transition-all;
+  }
+
+  .btn-lg {
+    @apply h-[54px];
+  }
+
+  .btn-md {
+    @apply h-[48px];
+  }
+
+  .input {
+    @apply bg-secondary text-paragraph h-[60px] outline-none pl-6 w-full text-[15px] rounded-sm ;
+  }
+
+  .textarea {
+    @apply bg-secondary resize-none w-full outline-none p-6 rounded-sm h-[200px] focus:outline focus:outline-1 ;
+  }
+
+
+}
+
+@layer components{
+  .resumeLi {
+    @apply w-full h-20 text-xl text-primary flex justify-center cursor-pointer  duration-300 items-center  rounded-none hover:bg-primary hover:text-white;
+         }
+}
+
+
+.animation-hover:after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  height: 2px;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  @apply w-0 bg-[#4A6CF7] left-1/2 block bottom-0 absolute;
+}
+
+.animation-active:after {
+  @apply left-0 w-full;
+}
+
+.animation-hover:hover:after {
+  @apply left-0 w-full;
+}
+
+
+
+
+
+
+.author-img {
+  animation: floatImage 3s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+
+  0% {
+    transform: translateY(0);
+
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
